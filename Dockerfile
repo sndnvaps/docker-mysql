@@ -16,6 +16,6 @@ VOLUME /var/lib/mysql
 
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-
+RUN  go version 
 EXPOSE 3306
 CMD ["mysqld"]
