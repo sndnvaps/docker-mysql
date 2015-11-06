@@ -12,6 +12,8 @@ RUN rpmkeys --import http://repo.mysql.com/RPM-GPG-KEY-mysql \
 RUN mkdir /docker-entrypoint-initdb.d
 VOLUME /var/lib/mysql
 COPY docker-entrypoint.sh /entrypoint.sh
+RUN chmod 0755 /entrypoint.sh 
+RUN ls -las /entrypoint.sh 
 ENTRYPOINT ["/entrypoint.sh"]
 EXPOSE 3306
 CMD ["mysqld"]
